@@ -27,4 +27,9 @@ test {
     useJUnitPlatform()
 }
 
+task site(type: PythonTask) {
+    dependsOn(tasks.pipInstall)
+    module = 'sphinx'
+    command = '-b html src/site build/site'
+}
 
